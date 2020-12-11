@@ -15,8 +15,8 @@ export class UserResolver {
     return this.users;
   }
 
-  // @ResolveReference()
-  // resolveReference(reference: { __typename: string; id: number }): User {
-  //   return this.users.find((user) => user.id === reference.id);
-  // }
+  @ResolveReference()
+  resolveReference(reference: { __typename: string; id: number }): User {
+    return this.users.find((user) => user.id == reference.id);
+  }
 }
